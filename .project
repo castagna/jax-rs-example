@@ -1,0 +1,13 @@
+<projectDescription>
+  <name>rdf-api</name>
+  <comment>Experiments with RDF APIs using JAX-RS</comment>
+  <projects/>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

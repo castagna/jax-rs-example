@@ -1,0 +1,18 @@
+TODO
+----
+
+ - Design APIs (i.e. decide MediaType for each method)
+ - Location of TDB directory is not going to work running with an uncompressed war.
+ - Migrate from Jersey to RESTEasy? (i.e. LGPL)
+ - ModelMessageBodyReader/Writer... if it does not work (why?), find alternative.
+ - BASE uri?
+ - PUT vs. POST what's the difference?
+
+DONE
+----
+
+ - Project setup [DONE]
+ - Find what is the best way to run TDB in/from a web app (see how Fuseki|Joseki does) [DONE]
+ - Find if possible to add named graphs to datasets stored in TDB [DONE]
+ - Find what is the best way to use lock with TDB [DONE]
+ 
