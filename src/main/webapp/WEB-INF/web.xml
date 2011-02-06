@@ -7,10 +7,6 @@
   <servlet>
     <servlet-name>sparql11-http-rdf-update</servlet-name>
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-    <init-param>
-      <param-name>javax.ws.rs.Application</param-name>
-      <param-value>com.talis.labs.api.sparql11.http.Sparql11HttpRdfUpdateApplication</param-value>
-    </init-param>
     <load-on-startup>1</load-on-startup> 
   </servlet>
 

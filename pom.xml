@@ -86,7 +86,7 @@
       <artifactId>jersey-grizzly</artifactId>
       <version>${jersey.version}</version>
     </dependency>
-
+ 
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
@@ -243,6 +243,7 @@
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty.version}</version>
         <configuration>
           <scanIntervalSeconds>5</scanIntervalSeconds>
           <stopKey>foo</stopKey>
@@ -251,7 +252,21 @@
             <contextPath>/http-rdf-update</contextPath>
             <tempDirectory>${project.build.directory}/work</tempDirectory>
           </webAppConfig>
+          <systemProperties>
+            <systemProperty>
+              <name>log4j.configuration</name>
+              <value>file:./src/test/resources/log4j.properties</value>
+            </systemProperty>
+          </systemProperties>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.13</version>
+            <type>jar</type>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>start-jetty</id>
@@ -261,8 +276,8 @@
               <goal>run</goal>
             </goals>
             <configuration>
-             <scanIntervalSeconds>0</scanIntervalSeconds>
-             <daemon>true</daemon>
+              <scanIntervalSeconds>0</scanIntervalSeconds>
+              <daemon>true</daemon>
             </configuration>
           </execution>
           <execution>

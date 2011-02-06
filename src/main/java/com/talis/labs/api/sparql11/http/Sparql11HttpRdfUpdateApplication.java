@@ -40,10 +40,6 @@ public class Sparql11HttpRdfUpdateApplication extends Application {
 //		classes.add(ModelMessageBodyReader.class);
 //		classes.add(ModelMessageBodyWriter.class);
 		
-		Location location = new Location("TDB");
-		
-		System.out.println("LOCATION = " + location);
-		
 		DatasetResolver datasetResolver = new DatasetResolver();
 		singletons.add(datasetResolver);
 	}
