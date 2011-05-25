@@ -24,8 +24,6 @@ import javax.ws.rs.core.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.hp.hpl.jena.tdb.base.file.Location;
-
 public class Sparql11HttpRdfUpdateApplication extends Application {
 
 	private static final Logger logger = LoggerFactory.getLogger(Sparql11HttpRdfUpdateApplication.class);

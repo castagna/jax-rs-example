@@ -39,8 +39,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jdk.version>1.6</jdk.version>
-    <jersey.version>1.6-ea02</jersey.version>
-    <jetty.version>7.3.0.v20110203</jetty.version>
+    <jersey.version>1.7-ea03</jersey.version>
+    <jetty.version>7.4.0.v20110414</jetty.version>
     <grizzly.version>1.9.9</grizzly.version>
     <servlet-api.version>2.5</servlet-api.version>
     <guice.version>2.0</guice.version>
@@ -131,6 +131,7 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>${slf4j.version}</version>
+      <scope>provided</scope> <!-- This is necessary to allow using SLF4J from the Jetty Maven plugin -->
     </dependency>
 
     <dependency>
@@ -255,15 +256,19 @@
           <systemProperties>
             <systemProperty>
               <name>log4j.configuration</name>
-              <value>file:./src/test/resources/log4j.properties</value>
+              <value>file:${project.basedir}/src/test/resources/log4j.properties</value>
+            </systemProperty>
+            <systemProperty>
+              <name>log4j.debug</name>
+              <value></value>
             </systemProperty>
           </systemProperties>
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.13</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
             <type>jar</type>
           </dependency>
         </dependencies>
